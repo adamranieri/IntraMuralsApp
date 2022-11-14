@@ -24,7 +24,8 @@ public class StatisticsServiceImpl implements StatisticsService{
 
     @Override
     public PlayerCard getPlayerCardByUserId(int id) {
-        ImUser user = this.userDAO.findById(id);
+        ImUser user = this.userDAO.findAll().stream().filter((u) -> u.getUserId() == id).findFirst().get();
+
         List<StatBasketball> basketballStat = this.statBasketballDAO.findAll().stream().filter(t -> t.getUserId() == id).collect(Collectors.toList());
 
         PlayerCard playerCard = new PlayerCard();

@@ -12,7 +12,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class VenueDAO implements CrudDAO<Venue> {
+public class VenueDAO implements CrudDAO<Venue, Integer> {
 
     private static VenueDAO venueDAO = null;
 
@@ -61,6 +61,11 @@ public class VenueDAO implements CrudDAO<Venue> {
             exception.printStackTrace();
             throw new DatabaseConnectionException();
         }
+    }
+
+    @Override
+    public Venue findById(Integer id) {
+        return null;
     }
 
     @Override

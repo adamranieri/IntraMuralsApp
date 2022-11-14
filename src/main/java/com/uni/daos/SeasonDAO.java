@@ -12,7 +12,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SeasonDAO implements CrudDAO<Season> {
+public class SeasonDAO implements CrudDAO<Season, Integer> {
 
     private static SeasonDAO seasonDAO = null;
 
@@ -63,6 +63,11 @@ public class SeasonDAO implements CrudDAO<Season> {
             throw new DatabaseConnectionException();
         }
 
+    }
+
+    @Override
+    public Season findById(Integer id) {
+        return null;
     }
 
     @Override

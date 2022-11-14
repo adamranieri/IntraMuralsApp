@@ -17,9 +17,9 @@ import java.util.stream.Collectors;
 
 public class RegistrationServiceImpl implements RegistrationService{
 
-    private CrudDAO<Team> teamDAO;
-    private CrudDAO<ImUser> userDao;
-    private CrudDAO<TeamRequest> teamRequestDAO;
+    private CrudDAO<Team, Integer> teamDAO;
+    private CrudDAO<ImUser, String> userDao;
+    private CrudDAO<TeamRequest, Integer> teamRequestDAO;
 
     public RegistrationServiceImpl(TeamDAO teamDAO, UserDAO userDao, TeamRequestDAO teamRequestDAO) {
         this.teamDAO = teamDAO;
@@ -39,10 +39,7 @@ public class RegistrationServiceImpl implements RegistrationService{
 
     @Override
     public ImUser getUserFromLoginCredentials(LoginCredentials loginCredentials) {
-        ImUser imUser = this.userDao.findAll().stream()
-                .filter((user) -> user.getUsername().equals(loginCredentials.getUsername()))
-                .findFirst()
-                .get();
+        ImUser imUser = this.userDao.findById(loginCredentials.getUsername());
 
         if(!imUser.getPassword().equals(loginCredentials.getPassword())){
             throw new PasswordMismatchException();

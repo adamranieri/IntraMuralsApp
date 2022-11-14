@@ -7,14 +7,15 @@ import com.uni.daos.VenueDAO;
 import com.uni.entities.Game;
 import com.uni.entities.Season;
 import com.uni.entities.Venue;
+import io.swagger.models.properties.IntegerProperty;
 
 import java.util.List;
 
 public class SchedulingServiceImpl implements SchedulingService{
 
-    private CrudDAO<Venue> venueDAO;
-    private CrudDAO<Game> gameDAO;
-    private CrudDAO<Season> seasonDAO;
+    private CrudDAO<Venue, Integer> venueDAO;
+    private CrudDAO<Game, Integer> gameDAO;
+    private CrudDAO<Season, Integer> seasonDAO;
 
     public SchedulingServiceImpl(VenueDAO venueDAO, GameDAO gameDAO, SeasonDAO seasonDAO){
         this.venueDAO = venueDAO;

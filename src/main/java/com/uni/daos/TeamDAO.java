@@ -12,7 +12,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TeamDAO implements CrudDAO<Team> {
+public class TeamDAO implements CrudDAO<Team, Integer> {
 
     private static TeamDAO teamDAO = null;
 
@@ -70,6 +70,11 @@ public class TeamDAO implements CrudDAO<Team> {
             exception.printStackTrace();
             throw new DatabaseConnectionException();
         }
+    }
+
+    @Override
+    public Team findById(Integer id) {
+        return null;
     }
 
     @Override

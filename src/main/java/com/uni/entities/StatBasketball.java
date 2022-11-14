@@ -1,9 +1,11 @@
 package com.uni.entities;
 
+import java.util.Objects;
+
 public class StatBasketball {
 
     private int statBasketballId;
-    private int userId;
+    private String username;
     private int gameId;
     private String teamName;
 
@@ -15,9 +17,9 @@ public class StatBasketball {
     public StatBasketball() {
     }
 
-    public StatBasketball(int statBasketballId, int userId, int gameId, String teamName, int points, int rebounds, int assists, int fouls) {
+    public StatBasketball(int statBasketballId, String username, int gameId, String teamName, int points, int rebounds, int assists, int fouls) {
         this.statBasketballId = statBasketballId;
-        this.userId = userId;
+        this.username = username;
         this.gameId = gameId;
         this.teamName = teamName;
         this.points = points;
@@ -34,12 +36,12 @@ public class StatBasketball {
         this.statBasketballId = statBasketballId;
     }
 
-    public int getUserId() {
-        return userId;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public int getGameId() {
@@ -88,5 +90,32 @@ public class StatBasketball {
 
     public void setFouls(int fouls) {
         this.fouls = fouls;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        StatBasketball that = (StatBasketball) o;
+        return statBasketballId == that.statBasketballId && gameId == that.gameId && points == that.points && rebounds == that.rebounds && assists == that.assists && fouls == that.fouls && Objects.equals(username, that.username) && Objects.equals(teamName, that.teamName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(statBasketballId, username, gameId, teamName, points, rebounds, assists, fouls);
+    }
+
+    @Override
+    public String toString() {
+        return "StatBasketball{" +
+                "statBasketballId=" + statBasketballId +
+                ", username='" + username + '\'' +
+                ", gameId=" + gameId +
+                ", teamName='" + teamName + '\'' +
+                ", points=" + points +
+                ", rebounds=" + rebounds +
+                ", assists=" + assists +
+                ", fouls=" + fouls +
+                '}';
     }
 }

@@ -8,7 +8,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GameDAO implements CrudDAO<Game> {
+public class GameDAO implements CrudDAO<Game, Integer> {
 
     private static GameDAO gameDAO = null;
 
@@ -81,6 +81,11 @@ public class GameDAO implements CrudDAO<Game> {
             exception.printStackTrace();
             throw new DatabaseConnectionException();
         }
+    }
+
+    @Override
+    public Game findById(Integer id) {
+        return null;
     }
 
     @Override

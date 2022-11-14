@@ -8,7 +8,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StatBasketballDAO implements CrudDAO<StatBasketball>{
+public class StatBasketballDAO implements CrudDAO<StatBasketball, Integer>{
 
     private static StatBasketballDAO statBasketballDAO = null;
 
@@ -35,7 +35,7 @@ public class StatBasketballDAO implements CrudDAO<StatBasketball>{
 
             PreparedStatement ps = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
-            ps.setInt(1, statBasketball.getUserId());
+            ps.setString(1, statBasketball.getUsername());
             ps.setInt(2, statBasketball.getGameId());
             ps.setString(3,statBasketball.getTeamName());
             ps.setInt(4,statBasketball.getPoints());
@@ -47,7 +47,7 @@ public class StatBasketballDAO implements CrudDAO<StatBasketball>{
             ResultSet rs = ps.getGeneratedKeys();
             rs.next();
 
-            int id = rs.getInt("user_id");
+            int id = rs.getInt(1);
             statBasketball.setStatBasketballId(id);
             return statBasketball;
         } catch (SQLException exception) {
@@ -71,7 +71,7 @@ public class StatBasketballDAO implements CrudDAO<StatBasketball>{
                 StatBasketball stat = new StatBasketball();
 
                 stat.setStatBasketballId(rs.getInt("s_basketball_id"));
-                stat.setUserId(rs.getInt("user_id"));
+                stat.setUsername(rs.getString("username"));
                 stat.setGameId(rs.getInt("game_id"));
                 stat.setTeamName(rs.getString("team_name"));
                 stat.setPoints(rs.getInt("points"));
@@ -91,14 +91,19 @@ public class StatBasketballDAO implements CrudDAO<StatBasketball>{
     }
 
     @Override
+    public StatBasketball findById(Integer id) {
+        return null;
+    }
+
+    @Override
     public void update(StatBasketball statBasketball) {
 
         try(Connection conn = ConnectionUtil.getConnection()){
 
-            String sql = "update stat_basketball set user_id = ?, game_id = ?, team_name = ?, points = ?, rebounds = ?, assists = ?, fouls = ? where s_basketball_id = ? ";
+            String sql = "update stat_basketball set username = ?, game_id = ?, team_name = ?, points = ?, rebounds = ?, assists = ?, fouls = ? where s_basketball_id = ? ";
 
             PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setInt(1, statBasketball.getUserId());
+            ps.setString(1, statBasketball.getUsername());
             ps.setInt(2,statBasketball.getGameId());
             ps.setString(3, statBasketball.getTeamName());
             ps.setInt(4, statBasketball.getPoints());

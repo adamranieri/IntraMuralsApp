@@ -1,8 +1,9 @@
 package com.uni.entities;
 
+import java.util.Objects;
+
 public class ImUser {
 
-    private int userId;
     private String username;
     private String password;
     private String role;
@@ -13,8 +14,7 @@ public class ImUser {
 
 
 
-    public ImUser(int userId, String username, String password, String role, int heightInches, int weightLbs, String profilePic, boolean hideBiometrics) {
-        this.userId = userId;
+    public ImUser(String username, String password, String role, int heightInches, int weightLbs, String profilePic, boolean hideBiometrics) {
         this.username = username;
         this.password = password;
         this.role = role;
@@ -25,14 +25,6 @@ public class ImUser {
     }
 
     public ImUser() {
-    }
-
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
     }
 
     public String getUsername() {
@@ -92,10 +84,22 @@ public class ImUser {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ImUser imUser = (ImUser) o;
+        return heightInches == imUser.heightInches && weightLbs == imUser.weightLbs && hideBiometrics == imUser.hideBiometrics && Objects.equals(username, imUser.username) && Objects.equals(password, imUser.password) && Objects.equals(role, imUser.role) && Objects.equals(profilePic, imUser.profilePic);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(username, password, role, heightInches, weightLbs, profilePic, hideBiometrics);
+    }
+
+    @Override
     public String toString() {
         return "ImUser{" +
-                "userId=" + userId +
-                ", username='" + username + '\'' +
+                "username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", role='" + role + '\'' +
                 ", heightInches=" + heightInches +

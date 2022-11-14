@@ -6,7 +6,6 @@ import java.util.List;
 
 public class PlayerCard {
 
-    private int id;
     private String username;
     private List<StatBasketball> basketballStats;
     private int heightInches;
@@ -17,22 +16,13 @@ public class PlayerCard {
     public PlayerCard() {
     }
 
-    public PlayerCard(int id, String username, List<StatBasketball> basketballStats, int heightInches, int weightLbs, String profilePic, boolean hideBiometrics) {
-        this.id = id;
+    public PlayerCard(String username, List<StatBasketball> basketballStats, int heightInches, int weightLbs, String profilePic, boolean hideBiometrics) {
         this.username = username;
         this.basketballStats = basketballStats;
         this.heightInches = heightInches;
         this.weightLbs = weightLbs;
         this.profilePic = profilePic;
         this.hideBiometrics = hideBiometrics;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getUsername() {

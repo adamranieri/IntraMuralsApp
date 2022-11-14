@@ -13,8 +13,8 @@ public class StatisticsController {
     }
 
     public void getPLayerCardById(Context context){
-        int id = Integer.parseInt(context.pathParam("id"));
-        PlayerCard playerCard = this.statisticsService.getPlayerCardByUserId(id);
+        String username = context.pathParam("id");
+        PlayerCard playerCard = this.statisticsService.getPlayerCardByUserId(username);
         context.json(playerCard);
 
     }

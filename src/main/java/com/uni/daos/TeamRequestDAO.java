@@ -8,7 +8,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TeamRequestDAO implements CrudDAO<TeamRequest>{
+public class TeamRequestDAO implements CrudDAO<TeamRequest, Integer>{
 
     private static TeamRequestDAO teamRequestDAO = null;
 
@@ -73,6 +73,11 @@ public class TeamRequestDAO implements CrudDAO<TeamRequest>{
             exception.printStackTrace();
             throw new DatabaseConnectionException();
         }
+    }
+
+    @Override
+    public TeamRequest findById(Integer id) {
+        return null;
     }
 
     @Override

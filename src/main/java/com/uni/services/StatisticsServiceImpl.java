@@ -11,11 +11,11 @@ import org.eclipse.jetty.server.Authentication;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class StatisticsServiceImpl implements StatisticsService{
+public class StatisticsServiceImpl implements StatisticsService {
 
 
-    private CrudDAO<StatBasketball> statBasketballDAO;
-    private UserDAO userDAO;
+    private CrudDAO<StatBasketball, Integer> statBasketballDAO;
+    private CrudDAO<ImUser, String> userDAO;
 
     public StatisticsServiceImpl(StatBasketballDAO statBasketballDAO, UserDAO userDAO) {
         this.statBasketballDAO = statBasketballDAO;
@@ -23,13 +23,12 @@ public class StatisticsServiceImpl implements StatisticsService{
     }
 
     @Override
-    public PlayerCard getPlayerCardByUserId(int id) {
-        ImUser user = this.userDAO.findAll().stream().filter((u) -> u.getUserId() == id).findFirst().get();
+    public PlayerCard getPlayerCardByUserId(String username) {
+        ImUser user = this.userDAO.findById(username);
 
-        List<StatBasketball> basketballStat = this.statBasketballDAO.findAll().stream().filter(t -> t.getUserId() == id).collect(Collectors.toList());
+        List<StatBasketball> basketballStat = this.statBasketballDAO.findAll().stream().filter(t -> t.getUsername().equals(username)).collect(Collectors.toList());
 
         PlayerCard playerCard = new PlayerCard();
-        playerCard.setId(user.getUserId());
         playerCard.setUsername(user.getUsername());
         playerCard.setHeightInches(user.getHeightInches());
         playerCard.setWeightLbs(user.getWeightLbs());

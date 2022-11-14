@@ -1,10 +1,12 @@
 package com.uni.services;
 
+import com.uni.daos.CrudDAO;
 import com.uni.daos.StatBasketballDAO;
 import com.uni.daos.UserDAO;
 import com.uni.dtos.PlayerCard;
 import com.uni.entities.ImUser;
 import com.uni.entities.StatBasketball;
+import org.eclipse.jetty.server.Authentication;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -12,7 +14,7 @@ import java.util.stream.Collectors;
 public class StatisticsServiceImpl implements StatisticsService{
 
 
-    private StatBasketballDAO statBasketballDAO;
+    private CrudDAO<StatBasketball> statBasketballDAO;
     private UserDAO userDAO;
 
     public StatisticsServiceImpl(StatBasketballDAO statBasketballDAO, UserDAO userDAO) {

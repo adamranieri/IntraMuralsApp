@@ -1,5 +1,6 @@
 package com.uni.services;
 
+import com.uni.daos.CrudDAO;
 import com.uni.daos.GameDAO;
 import com.uni.daos.SeasonDAO;
 import com.uni.daos.VenueDAO;
@@ -11,9 +12,9 @@ import java.util.List;
 
 public class SchedulingServiceImpl implements SchedulingService{
 
-    private VenueDAO venueDAO;
-    private GameDAO gameDAO;
-    private SeasonDAO seasonDAO;
+    private CrudDAO<Venue> venueDAO;
+    private CrudDAO<Game> gameDAO;
+    private CrudDAO<Season> seasonDAO;
 
     public SchedulingServiceImpl(VenueDAO venueDAO, GameDAO gameDAO, SeasonDAO seasonDAO){
         this.venueDAO = venueDAO;

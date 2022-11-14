@@ -1,5 +1,6 @@
 package com.uni.services;
 
+import com.uni.daos.CrudDAO;
 import com.uni.daos.TeamDAO;
 import com.uni.daos.TeamRequestDAO;
 import com.uni.daos.UserDAO;
@@ -16,9 +17,9 @@ import java.util.stream.Collectors;
 
 public class RegistrationServiceImpl implements RegistrationService{
 
-    private TeamDAO teamDAO;
+    private CrudDAO<Team> teamDAO;
     private UserDAO userDao;
-    private TeamRequestDAO teamRequestDAO;
+    private CrudDAO<TeamRequest> teamRequestDAO;
 
     public RegistrationServiceImpl(TeamDAO teamDAO, UserDAO userDao, TeamRequestDAO teamRequestDAO) {
         this.teamDAO = teamDAO;
@@ -43,6 +44,7 @@ public class RegistrationServiceImpl implements RegistrationService{
         if(!imUser.getPassword().equals(loginCredentials.getPassword())){
             throw new PasswordMismatchException();
         }
+
         return imUser;
     }
 

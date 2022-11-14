@@ -28,7 +28,7 @@ public class TeamRequestDAO implements CrudDAO<TeamRequest, Integer>{
             String sql = "insert into team_requests values (default,?,?,?::team_request_status)";
             PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             ps.setString(1,teamRequest.getTeamName());
-            ps.setInt(2, teamRequest.getRequesterId());
+            ps.setString(2, teamRequest.getUsername());
             ps.setString(3,teamRequest.getTeamRequestStatus());
 
             ps.execute();
@@ -62,7 +62,7 @@ public class TeamRequestDAO implements CrudDAO<TeamRequest, Integer>{
                 TeamRequest request = new TeamRequest();
                 request.setTeamRequestId(rs.getInt("request_id"));
                 request.setTeamName(rs.getString("team"));
-                request.setRequesterId(rs.getInt("user_id"));
+                request.setUsername(rs.getString("username"));
                 request.setTeamRequestStatus(rs.getString("status"));
                 requests.add(request);
             }
@@ -84,11 +84,11 @@ public class TeamRequestDAO implements CrudDAO<TeamRequest, Integer>{
     public void update(TeamRequest teamRequest) {
 
         try(Connection conn = ConnectionUtil.getConnection()){
-            String sql  = "update team_requests set team=?, user_id=?, status=?::team_request_status where request_id =?";
+            String sql  = "update team_requests set team=?, username=?, status=?::team_request_status where request_id =?";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, teamRequest.getTeamName());
-            ps.setInt(2,teamRequest.getRequesterId());
-            ps.setString(3,teamRequest.getTeamRequestStatus());
+            ps.setString(2, teamRequest.getUsername());
+            ps.setString(3, teamRequest.getTeamRequestStatus());
             ps.setInt(4, teamRequest.getTeamRequestId());
             ps.executeUpdate();
 

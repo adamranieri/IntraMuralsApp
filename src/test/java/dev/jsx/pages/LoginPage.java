@@ -26,5 +26,4 @@ public class LoginPage {
     WebElement mainPageLink;
 
 
-
 }

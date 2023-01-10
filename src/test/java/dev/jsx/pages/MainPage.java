@@ -5,26 +5,20 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage {
+public class MainPage {
+
     private WebDriver driver;
 
-    public LoginPage(WebDriver driver) {
+    public MainPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(name="username")
-    WebElement usernameInput;
+    @FindBy(linkText="Register")
+    WebElement registerLink;
 
-    @FindBy(name="password")
-    WebElement passwordInput;
-
-    @FindBy(tagName="button")
-    WebElement loginButton;
-
-    @FindBy(linkText="Main Page")
-    WebElement mainPageLink;
-
+    @FindBy(linkText="Login")
+    WebElement loginLink;
 
 
 }

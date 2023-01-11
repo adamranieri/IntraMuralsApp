@@ -8,7 +8,7 @@ Feature: Admin attempts to schedule a game
     When The user clicks on Schedule game
     Then The user is on Game Scheduling Form
     When User clicks schedule button
-    Then User is gets a popup of empty fields
+    Then User gets a popup of empty fields
 
   Scenario: Admin schedule game series with no date selected
     When The user clicks on Schedule game
@@ -19,7 +19,7 @@ Feature: Admin attempts to schedule a game
     When User selects a Home Team
     When User selects an Away Team
     And User clicks schedule button
-    Then User is gets a popup of empty date field
+    Then User gets a popup of empty date field
 
   Scenario: Admin schedule game series with a past date selected
     When The user clicks on Schedule game
@@ -31,7 +31,7 @@ Feature: Admin attempts to schedule a game
     When User selects a Home Team
     When User selects an Away Team
     And User clicks schedule button
-    Then User is gets a popup of selecting a future date
+    Then User gets a popup of selecting a future date
 
 
     Scenario: Admin schedule game series with no sports selected
@@ -41,7 +41,7 @@ Feature: Admin attempts to schedule a game
       When User selects a time and date
       When User selects season for basketball
       And User clicks schedule button
-      Then User is gets a popup of selecting sports field
+      Then User gets a popup of selecting sports field
 
 
 

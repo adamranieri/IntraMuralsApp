@@ -8,7 +8,7 @@ Feature: Admin can promote a player
     When User clicks on Manage User Roles
     Then User is on Manager View page
     When User clicks on a Promote to Referee on a player
-    Then The page updates and the player role is promoted
+    Then The page updates and the player role is updated
 
   Scenario: Admin promotes a player as admin
     When User clicks on Manage User Roles

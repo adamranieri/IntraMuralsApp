@@ -5,7 +5,7 @@ Feature: Captain can filter which player will make it onto their team
   Given The player is on home page
 
   Scenario: View list of players requesting to join team
-    Given The player is on Approve/Deny Team Requests Page
+    Given The player is on Approve or Deny Team Requests Page
     When The player can click on See The Player
     Then The player can view details on a player
     When The player clicks on close button
@@ -14,7 +14,7 @@ Feature: Captain can filter which player will make it onto their team
     Then The player is back on the homepage
 
   Scenario: The Captain can approve of player
-    Given The player is on Approve/Deny Team Requests Page
+    Given The player is on Approve or Deny Team Requests Page
     When The player clicks on approve
     Then An alert appears saying it has been approve button
     When The player clicks on alert

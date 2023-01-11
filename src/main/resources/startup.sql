@@ -1,3 +1,14 @@
+drop table stat_basketball;
+drop table stat_softball;
+drop table referee_lookup;
+drop table team_requests;
+drop table game;
+drop table team;
+drop table im_user;
+drop table venue;
+drop table season;
+
+
 create type im_role as enum ('referee','player','admin');
 create type sport as enum ('softball','basketball');
 create type team_request_status as enum ('pending','denied','accepted');
@@ -85,18 +96,6 @@ create table team_requests(
 	user_id int references im_user(user_id),
 	status team_request_status
 );
-
-
-
-drop table stat_basketball;
-drop table stat_softball;
-drop table referee_lookup;
-drop table team_requests;
-drop table game;
-drop table team;
-drop table im_user;
-drop table venue;
-drop table season;
 
 
 select * from im_user;

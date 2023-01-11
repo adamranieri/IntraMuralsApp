@@ -59,7 +59,6 @@ public class OptionPage {
     WebElement officiateGamesLink;
 
 
-
     @FindBy(tagName ="button")
     WebElement logoutButton;
 

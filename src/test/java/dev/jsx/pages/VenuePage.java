@@ -27,7 +27,7 @@ public class VenuePage {
     @FindBy(id="venueTableBody")
     WebElement venueTableBody;
 
-    @FindBy(xpath="*[@id='venueTableBody']")
+    @FindBy(xpath="*[@id='venueTableBody']/tr[1]")
     WebElement firstRow;
 
     @FindBy(linkText="Back")

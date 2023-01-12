@@ -14,23 +14,23 @@ public class EditUserProfilePage {
     }
 
     @FindBy(name="username")
-    WebElement usernameInput;
+    public WebElement usernameInput;
 
     @FindBy(name="password")
-    WebElement passwordInput;
+    public WebElement passwordInput;
 
     @FindBy(name="height")
-    WebElement heightInput;
+    public WebElement heightInput;
 
     @FindBy(name="weight")
-    WebElement pictureInput;
+    public WebElement pictureInput;
 
     @FindBy(name="biometrics")
-    WebElement biometricsCheckbox;
+    public WebElement biometricsCheckbox;
 
     @FindBy(xpath="//button[text() = 'Submit']")
-    WebElement submitButton;
+    public WebElement submitButton;
 
     @FindBy(linkText="Back")
-    WebElement backLink;
+    public WebElement backLink;
 }

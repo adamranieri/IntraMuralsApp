@@ -1,5 +1,7 @@
 Feature: Update Profile Picture
 
+Given The user is logged in
+
   Scenario:The user wants to update their profile picture
     Given The user is on the User Edit Page
     When the user selects the profile picture text input

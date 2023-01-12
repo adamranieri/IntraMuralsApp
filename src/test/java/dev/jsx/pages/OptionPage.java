@@ -29,6 +29,7 @@ public class OptionPage {
     WebElement registerLink;
 
     @FindBy(linkText="Edit User Profile")
+    public
     WebElement editUserProfileButton;
 
     @FindBy(linkText="Games")
@@ -60,12 +61,14 @@ public class OptionPage {
 
 
     @FindBy(tagName ="button")
+    public
     WebElement logoutButton;
 
 
 
     // Non navigational web elements
     @FindBy(xpath ="/html/body/h1")
+    public
     WebElement roleTextInfo;
 
     @FindBy(xpath ="/html/body/h2")

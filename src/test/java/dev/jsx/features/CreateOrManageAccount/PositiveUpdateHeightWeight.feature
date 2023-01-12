@@ -1,5 +1,7 @@
 Feature: Positive Update Height & Weight
 
+Given The user is logged in
+
   Scenario:The user wants to update their height
     Given The user is on the User Edit Page
     When the user types a new height "75" inches in the height input

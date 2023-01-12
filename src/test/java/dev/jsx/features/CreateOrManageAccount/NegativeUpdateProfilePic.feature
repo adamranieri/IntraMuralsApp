@@ -1,5 +1,7 @@
 Feature: Negative Update Profile Picture
 
+Given The user is logged in
+
   Scenario:The user updates their profile picture with an invalid url (url does not end with extension .jpg, .jpeg, .gif, .png)
     Given The user is on the User Edit Page
     When the user selects the profile picture text input

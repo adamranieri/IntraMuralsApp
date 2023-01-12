@@ -14,12 +14,15 @@ public class LoginPage {
     }
 
     @FindBy(name="username")
+    public
     WebElement usernameInput;
 
     @FindBy(name="password")
+    public
     WebElement passwordInput;
 
     @FindBy(tagName="button")
+    public
     WebElement loginButton;
 
     @FindBy(linkText="Main Page")

@@ -1,5 +1,7 @@
 Feature: Negative Update Height & Weight
 
+Given The user is logged in
+
   Scenario:The user wants to update their height with non-possible values
     Given The user is on the User Edit Page
     When the user types a new height "10" inches in the height input

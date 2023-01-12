@@ -5,7 +5,7 @@ Feature: Login
     When  The user types "<username>" into username input
     When The user types "<password>" into password input
     When The user clicks on the login button
-    Then the user should be on the "User Page"
+    Then the user should be on the User Page
     Then The user should see their name "<role>" on the home page
     Then The user should see their name "<username>" on the home page
 

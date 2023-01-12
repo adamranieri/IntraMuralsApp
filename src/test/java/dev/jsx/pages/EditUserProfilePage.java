@@ -20,15 +20,18 @@ public class EditUserProfilePage {
     WebElement passwordInput;
 
     @FindBy(name="height")
+    public
     WebElement heightInput;
 
-    @FindBy(name="weight")
+    @FindBy(name="picture")
     WebElement pictureInput;
 
     @FindBy(name="biometrics")
+    public
     WebElement biometricsCheckbox;
 
     @FindBy(xpath="//button[text() = 'Submit']")
+    public
     WebElement submitButton;
 
     @FindBy(linkText="Back")

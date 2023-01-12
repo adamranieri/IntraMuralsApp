@@ -1,5 +1,7 @@
 Feature: Logout
 
+Given The user is logged in
+
   Scenario: A logged in 'player' logs out
     Given the user has a role of 'player'
     Given The user is on the home page

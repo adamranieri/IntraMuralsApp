@@ -1,5 +1,7 @@
 Feature: Update Password
 
+Given The user is logged in
+
   Scenario:The user wants to update their password
     Given The user is on the User Edit Page
     When the user types a new password "newpass123" into the password input

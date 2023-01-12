@@ -1,5 +1,6 @@
 Feature: Negative Register New User
 
+
   Scenario: Register with username that already exists and password
     Given The user is on the register page
     When  The user types "TopDawg" into username input

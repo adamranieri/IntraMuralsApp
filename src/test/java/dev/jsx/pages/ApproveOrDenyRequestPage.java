@@ -31,10 +31,10 @@ public class ApproveOrDenyRequestPage {
     }
 
     @FindBy(id="teamRequests")
-    WebElement teamRequestsTableBody;
+    public WebElement teamRequestsTableBody;
 
 
 
     @FindBy(linkText="Back")
-    WebElement backLink;
+    public WebElement backLink;
 }

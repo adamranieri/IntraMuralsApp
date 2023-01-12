@@ -15,32 +15,32 @@ public class RegisterPage {
     }
 
     @FindBy(name="username")
-    WebElement usernameInput;
+    public WebElement usernameInput;
 
     @FindBy(name="password")
-    WebElement passwordInput;
+    public WebElement passwordInput;
 
     @FindBy(name="height")
-    WebElement heightNumberInput;
+    public WebElement heightNumberInput;
 
     @FindBy(name="weight")
-    WebElement weightNumberInput;
+    public WebElement weightNumberInput;
 
     @FindBy(name="picture")
-    WebElement pictureTextInput;
+    public WebElement pictureTextInput;
 
     @FindBy(name="biometrics")
-    WebElement biometricsCheckbox;
+    public WebElement biometricsCheckbox;
 
     @FindBy(xpath="/html/body/form/button")
-    WebElement submitFormButton;
+    public WebElement submitFormButton;
 
 
     @FindBy(xpath="/html/body/a[1]")
-    WebElement backButtonLeft;
+    public WebElement backButtonLeft;
 
     @FindBy(xpath="/html/body/a[2]")
-    WebElement backButtonRight;
+    public WebElement backButtonRight;
 
 
 }

@@ -29,7 +29,7 @@ public class EditOfficiatingChoicePage {
     public WebElement submitRemoveGame;
 
     @FindBy(linkText="Back")
-    WebElement backButton;
+    public WebElement backButton;
 
 
 }

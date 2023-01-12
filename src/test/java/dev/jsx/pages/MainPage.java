@@ -15,10 +15,10 @@ public class MainPage {
     }
 
     @FindBy(linkText="Register")
-    WebElement registerLink;
+    public WebElement registerLink;
 
     @FindBy(linkText="Login")
-    WebElement loginLink;
+    public WebElement loginLink;
 
 
 }

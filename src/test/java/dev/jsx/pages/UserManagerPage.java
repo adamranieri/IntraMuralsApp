@@ -31,8 +31,8 @@ public class UserManagerPage {
     }
 
     @FindBy(id="userTableBody")
-    WebElement userTableBody;
+    public WebElement userTableBody;
 
     @FindBy(linkText="Back")
-    WebElement backLink;
+    public WebElement backLink;
 }

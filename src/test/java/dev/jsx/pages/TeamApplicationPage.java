@@ -26,10 +26,10 @@ public class TeamApplicationPage {
 
 
     @FindBy(xpath ="/html/body/div/button[contains(text(),'Apply')]")
-    WebElement applyButton;
+    public WebElement applyButton;
 
     @FindBy(linkText="Back")
-    WebElement backButton;
+    public WebElement backButton;
 
 
 

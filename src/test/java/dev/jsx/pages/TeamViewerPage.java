@@ -18,13 +18,13 @@ public class TeamViewerPage {
 
     // gets a list of the 'See The Player' buttons.
     @FindBy(xpath="//*[@id=\"teammateInfo\"]/tr/td[4]/button[contains(text(),'See The Captain')]")
-    List<WebElement> showCaptainButtonList;
+    public List<WebElement> showCaptainButtonList;
 
     @FindBy(linkText="Back")
-    WebElement backButton;
+    public WebElement backButton;
 
     @FindBy(xpath="/html/body/section/button[contains(text(),'Close')]")
-    WebElement closeWindowButton;
+    public WebElement closeWindowButton;
 
 
 

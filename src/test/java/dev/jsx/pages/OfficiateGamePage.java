@@ -27,86 +27,86 @@ public class OfficiateGamePage {
     }
 
     @FindBy(id="gameTableBody")
-    WebElement gameTableBody;
+    public WebElement gameTableBody;
 
 
     @FindBy(xpath="//*[@id=\"gameTableBody\"]/tr[1]")
-    WebElement firstRow;
+    public WebElement firstRow;
 
 
     @FindBy(xpath="//*[@id=\"gameTableBody\"]/tr[1]/td[8]/button[contains(text(),'Update Scores')]")
-    List<WebElement> showCaptainButtonList;
+    public List<WebElement> showCaptainButtonList;
 
 
     @FindBy(linkText="Back")
-    WebElement backLink;
+    public WebElement backLink;
 
     @FindBy(xpath="//*[@id=\"playerLists\"]/button[1]")
-    WebElement closeButton;
+    public WebElement closeButton;
 
     // Home Team Pop up Menu
     //
     @FindBy(xpath ="//*[@id=\"homeTeam\"]/dl/dt")
-    WebElement homeTeamUserID;
+    public WebElement homeTeamUserID;
 
 
     // input points for home team
     @FindBy(xpath="//*[@id=\"homeTeam\"]/dl/dd[1]/input")
-    WebElement homePointInput;
+    public WebElement homePointInput;
 
 //    Add 1 point
     @FindBy(xpath="//*[@id=\"homeTeam\"]/dl/dd[1]/button[1]")
-    WebElement homeAddOnePointButton;
+    public WebElement homeAddOnePointButton;
 
     // add 2 points
     @FindBy(xpath="//*[@id=\"homeTeam\"]/dl/dd[1]/button[1]")
-    WebElement homeAddTwoPointsButton;
+    public WebElement homeAddTwoPointsButton;
 
     //add 3 points
     @FindBy(xpath="//*[@id=\"homeTeam\"]/dl/dd[1]/button[1]")
-    WebElement homeAddThreePointsButton;
+    public WebElement homeAddThreePointsButton;
 
     // add fouls to home team
     @FindBy(xpath="//*[@id=\"homeTeam\"]/dl/dd[2]/input")
-    WebElement homeFoulsInput;
+    public WebElement homeFoulsInput;
 
     // add button for fouls
     @FindBy(xpath="//*[@id=\"homeTeam\"]/dl/dd[2]/button[1]")
-    WebElement addFoulsButton;
+    public WebElement addFoulsButton;
 
     //*[@id="awayTeam"]/dl/dt
 
 
     @FindBy(xpath ="//*[@id=\"awayTeam\"]/dl/dt")
-    WebElement awayTeamUserID;
+    public WebElement awayTeamUserID;
 
 
     // input points for home team
     @FindBy(xpath="//*[@id=\"awayTeam\"]/dl/dd[1]/input")
-    WebElement awayPointInput;
+    public WebElement awayPointInput;
 
     //    Add 1 point
     @FindBy(xpath="//*[@id=\"awayTeam\"]/dl/dd[1]/button[1]")
-    WebElement awayAddOnePointButton;
+    public WebElement awayAddOnePointButton;
 
     // add 2 points
     @FindBy(xpath="//*[@id=\"awayTeam\"]/dl/dd[1]/button[1]")
-    WebElement awayAddTwoPointsButton;
+    public WebElement awayAddTwoPointsButton;
 
     //add 3 points
     @FindBy(xpath="//*[@id=\"awayTeam\"]/dl/dd[1]/button[1]")
-    WebElement awayAddThreePointsButton;
+    public WebElement awayAddThreePointsButton;
 
     // add fouls to home team
     @FindBy(xpath="//*[@id=\"awayTeam\"]/dl/dd[2]/input")
-    WebElement awayFoulsInput;
+    public WebElement awayFoulsInput;
 
     // add button for fouls
     @FindBy(xpath="//*[@id=\"awayTeam\"]/dl/dd[2]/button[1]")
-    WebElement awayFoulsButton;
+    public WebElement awayFoulsButton;
 
     @FindBy(xpath="//*[@id=\"playerLists\"]/button[2]")
-    WebElement saveButton;
+    public WebElement saveButton;
 
 
 

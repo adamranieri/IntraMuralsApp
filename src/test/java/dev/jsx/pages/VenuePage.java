@@ -25,11 +25,11 @@ public class VenuePage {
     }
 
     @FindBy(id="venueTableBody")
-    WebElement venueTableBody;
+    public WebElement venueTableBody;
 
     @FindBy(xpath="*[@id='venueTableBody']/tr[1]")
-    WebElement firstRow;
+    public WebElement firstRow;
 
     @FindBy(linkText="Back")
-    WebElement backLink;
+    public WebElement backLink;
 }

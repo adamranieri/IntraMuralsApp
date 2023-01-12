@@ -23,14 +23,14 @@ public class AddSeasonPage {
     }
 
     @FindBy(id="seasonTableBody")
-    WebElement seasonTableBody;
+    public WebElement seasonTableBody;
 
     @FindBy(name="season")
-    WebElement seasonNameInput;
+    public WebElement seasonNameInput;
 
     @FindBy(xpath="//form/button[text()='submit']")
-    WebElement submitButton;
+    public WebElement submitButton;
 
     @FindBy(linkText="Back")
-    WebElement backLink;
+    public WebElement backLink;
 }

@@ -26,7 +26,12 @@ public class ConnectionUtil {
                 return conn;
             } else {
                 //example connection string jdbc:postgresql://localhost:5432/postgres?user=postgres&password=password
-                Connection conn = DriverManager.getConnection(System.getenv("DB_URL"), System.getenv("DB_USERNAME"), System.getenv(("DB_PASSWORD")));
+                Connection conn = DriverManager.getConnection(
+                            System.getenv("DB_URL"),
+                            System.getenv("DB_USER"),
+                            System.getenv("DB_PASS")
+                );
+
                 return conn;
             }
         } catch (SQLException | IOException e) {

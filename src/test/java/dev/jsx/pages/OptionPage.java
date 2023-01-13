@@ -58,6 +58,9 @@ public class OptionPage {
     @FindBy(linkText="Officiate Games")
     public WebElement officiateGamesLink;
 
+    @FindBy(linkText="Team Applications")
+    public WebElement teamApplicationsLink;
+
 
     @FindBy(tagName ="button")
     public WebElement logoutButton;

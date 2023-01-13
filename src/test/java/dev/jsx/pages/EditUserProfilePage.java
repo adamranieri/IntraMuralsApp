@@ -23,10 +23,13 @@ public class EditUserProfilePage {
     public WebElement heightInput;
 
     @FindBy(name="weight")
+<<<<<<< HEAD
     public WebElement weightInput;
 
 
     @FindBy(name="picture")
+=======
+>>>>>>> master
     public WebElement pictureInput;
 
     @FindBy(name="biometrics")

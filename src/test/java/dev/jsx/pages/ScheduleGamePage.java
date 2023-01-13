@@ -71,7 +71,7 @@ public class ScheduleGamePage {
     public WebElement scheduleButton;
 
     @FindBy(linkText="Back")
-    WebElement backButton;
+    public WebElement backButton;
 
 
 }

@@ -14,6 +14,7 @@ public class LoginPage {
     }
 
     @FindBy(name="username")
+<<<<<<< HEAD
     public
     WebElement usernameInput;
 
@@ -24,9 +25,18 @@ public class LoginPage {
     @FindBy(tagName="button")
     public
     WebElement loginButton;
+=======
+    public WebElement usernameInput;
+
+    @FindBy(name="password")
+    public WebElement passwordInput;
+
+    @FindBy(tagName="button")
+    public WebElement loginButton;
+>>>>>>> master
 
     @FindBy(linkText="Main Page")
-    WebElement mainPageLink;
+    public WebElement mainPageLink;
 
 
 }

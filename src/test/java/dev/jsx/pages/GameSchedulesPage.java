@@ -26,11 +26,11 @@ public class GameSchedulesPage {
     }
 
     @FindBy(id="gameTableBody")
-    WebElement gameTableBody;
+    public WebElement gameTableBody;
 
-    @FindBy(xpath="*[@id='gameTableBody']/tr[1]")
-    WebElement firstRow;
+    @FindBy(xpath="//*[@id='gameTableBody']/tr[1]")
+    public WebElement firstRow;
 
     @FindBy(linkText="Back")
-    WebElement backLink;
+    public WebElement backLink;
 }

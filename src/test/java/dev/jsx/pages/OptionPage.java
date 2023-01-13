@@ -26,62 +26,77 @@ public class OptionPage {
 
     // Navigational web elements - leads to other pages
     @FindBy(linkText="Register")
-    WebElement registerLink;
+    public WebElement registerLink;
 
     @FindBy(linkText="Edit User Profile")
+<<<<<<< HEAD
     public
     WebElement editUserProfileButton;
+=======
+    public WebElement editUserProfileButton;
+>>>>>>> master
 
     @FindBy(linkText="Games")
-    WebElement gamesLInk;
+    public WebElement gamesLink;
 
     @FindBy(linkText="View Venues")
-    WebElement viewVenuesLink;
+    public WebElement viewVenuesLink;
 
     @FindBy(linkText="View Seasons")
-    WebElement viewSeasonsLink;
+    public WebElement viewSeasonsLink;
 
     @FindBy(linkText="Approve/Deny Team Requests")
-    WebElement approveDenyTeamRequestLink;
+    public WebElement approveDenyTeamRequestLink;
 
     @FindBy(linkText="View Your Team")
-    WebElement viewYourTeamLink;
+    public WebElement viewYourTeamLink;
 
     @FindBy(linkText="Manage User Roles")
-    WebElement manageUserRolesLink;
+    public WebElement manageUserRolesLink;
 
     @FindBy(linkText="Schedule Game")
-    WebElement scheduleGameLink;
+    public WebElement scheduleGameLink;
 
     @FindBy(linkText="Edit Officiating Choice")
-    WebElement editOfficiatingChoiceLink;
+    public WebElement editOfficiatingChoiceLink;
 
     @FindBy(linkText="Officiate Games")
-    WebElement officiateGamesLink;
+    public WebElement officiateGamesLink;
+
+    @FindBy(linkText="Team Applications")
+    public WebElement teamApplicationsLink;
 
 
     @FindBy(tagName ="button")
+<<<<<<< HEAD
     public
     WebElement logoutButton;
+=======
+    public WebElement logoutButton;
+>>>>>>> master
 
 
 
     // Non navigational web elements
     @FindBy(xpath ="/html/body/h1")
+<<<<<<< HEAD
     public
     WebElement roleTextInfo;
+=======
+    public WebElement roleTextInfo;
+>>>>>>> master
 
     @FindBy(xpath ="/html/body/h2")
-    WebElement captainTextInfo;
+    public WebElement captainTextInfo;
 
     @FindBy(xpath ="/html/body/div/p[1]")
-    WebElement usernameTextInfo;
+    public WebElement usernameTextInfo;
 
     @FindBy(xpath ="/html/body/div/p[2]")
-    WebElement noProfilePic;
+    public WebElement noProfilePic;
 
     @FindBy(tagName ="img")
-    WebElement profilePic;
+    public WebElement profilePic;
 
 
 

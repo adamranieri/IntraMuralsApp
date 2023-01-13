@@ -25,11 +25,11 @@ public class SeasonPage {
     }
 
     @FindBy(id="seasonTableBody")
-    WebElement seasonTableBody;
+    public WebElement seasonTableBody;
 
     @FindBy(xpath="*[@id='seasonTableBody']/tr[1]")
-    WebElement firstRow;
+    public WebElement firstRow;
 
     @FindBy(linkText="Back")
-    WebElement backLink;
+    public WebElement backLink;
 }

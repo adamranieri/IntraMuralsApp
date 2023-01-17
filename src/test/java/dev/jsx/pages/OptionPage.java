@@ -29,12 +29,8 @@ public class OptionPage {
     public WebElement registerLink;
 
     @FindBy(linkText="Edit User Profile")
-<<<<<<< HEAD
-    public
-    WebElement editUserProfileButton;
-=======
     public WebElement editUserProfileButton;
->>>>>>> master
+
 
     @FindBy(linkText="Games")
     public WebElement gamesLink;
@@ -68,23 +64,15 @@ public class OptionPage {
 
 
     @FindBy(tagName ="button")
-<<<<<<< HEAD
-    public
-    WebElement logoutButton;
-=======
     public WebElement logoutButton;
->>>>>>> master
+
 
 
 
     // Non navigational web elements
     @FindBy(xpath ="/html/body/h1")
-<<<<<<< HEAD
-    public
-    WebElement roleTextInfo;
-=======
     public WebElement roleTextInfo;
->>>>>>> master
+
 
     @FindBy(xpath ="/html/body/h2")
     public WebElement captainTextInfo;

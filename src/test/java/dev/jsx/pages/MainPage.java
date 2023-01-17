@@ -18,12 +18,8 @@ public class MainPage {
     public WebElement registerLink;
 
     @FindBy(linkText="Login")
-<<<<<<< HEAD
-    public
-    WebElement loginLink;
-=======
+
     public WebElement loginLink;
->>>>>>> master
 
 
 }

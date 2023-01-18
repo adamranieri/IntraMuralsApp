@@ -7,6 +7,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -23,6 +24,7 @@ public class AllUsersSteps {
     OptionPage optionPage;
     GameSchedulesPage gameSchedulesPage;
     VenuePage venuePage;
+    SeasonPage seasonPage;
 
     @Given("the user logs in using the username {string} and  the password {string}")
     public void theUserLogsInUsingTheUsernameAndThePassword(String username, String password) {
@@ -102,5 +104,32 @@ public class AllUsersSteps {
                 .until(ExpectedConditions.elementToBeClickable(venuePage.firstRow));
 
         assertEquals("Venue", driver.getTitle());
+    }
+
+    @When("the user clicks on View Seasons")
+    public void theUserClicksOnViewSeasons() {
+        optionPage.viewSeasonsLink.click();
+    }
+
+    @Then("the user should be on the Season page")
+    public void theUserShouldBeOnTheSeasonPage() {
+        seasonPage = new SeasonPage(driver);
+
+        boolean onSeasonPage = true;
+
+        try {
+            new WebDriverWait(driver, Duration.ofSeconds(5))
+                    .until(ExpectedConditions.elementToBeClickable(seasonPage.firstRow));
+        }
+        catch (TimeoutException e) {
+            onSeasonPage = false;
+        }
+
+        assertTrue(onSeasonPage);
+    }
+
+    @And("the user should see details of seasons")
+    public void theUserShouldSeeDetailsOfSeasons() {
+        assertTrue(seasonPage.getSeasons().size() > 0);
     }
 }

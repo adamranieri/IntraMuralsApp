@@ -8,5 +8,4 @@ Feature: The Captain can deny player request to join team
     Given The player is on Approve or Deny Team Requests Page
     When The player clicks on deny button
     Then An alert appears saying the player has been denied
-    When The player clicks on alert
     Then The alert confirmation disappears and the captain sees the request status

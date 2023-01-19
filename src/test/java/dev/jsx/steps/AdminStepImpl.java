@@ -55,7 +55,6 @@ public class AdminStepImpl {
         String actual = "User Page";
 
         assertEquals(expected, actual);
-
     }
     @When("The user clicks on Schedule game")
     public void the_user_clicks_on_schedule_game() {

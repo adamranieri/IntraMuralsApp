@@ -1,4 +1,4 @@
-Feature: Login
+Feature: Login Negative
 
   Scenario: Login with incorrect username and password
     Given The user is on the login page

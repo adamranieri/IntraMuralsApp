@@ -4,6 +4,7 @@ import dev.jsx.pages.EditUserProfilePage;
 import dev.jsx.pages.LoginPage;
 import dev.jsx.pages.MainPage;
 import dev.jsx.pages.OptionPage;
+import dev.jsx.runners.TestRunner;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -14,14 +15,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.junit.Assert;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
+import static dev.jsx.runners.TestRunner.driver;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BiometricDisplayOptionStepImpl {
 
-    public static WebDriver driver = JSXrunner.driver;
+    public static WebDriver driver = TestRunner.driver;
 
     EditUserProfilePage editUserProfilePage  = new EditUserProfilePage(driver);
     MainPage mainPage = new MainPage(driver);
@@ -31,6 +34,7 @@ public class BiometricDisplayOptionStepImpl {
     OptionPage optionPage = new OptionPage(driver);
 
 
+    // logs in player Bobby202 who is a player and captain
     @Given("The user is logged in as player")
     public void the_user_is_logged_in_as_player() throws InterruptedException {
         // Write code here that turns the phrase above into concrete actions
@@ -44,14 +48,28 @@ public class BiometricDisplayOptionStepImpl {
                 .pollingEvery(Duration.ofMillis(140))
                 .ignoring(ElementNotInteractableException.class)
                 .until(ExpectedConditions.visibilityOf(loginPage.loginButton)).click();
-        Thread.sleep(2000);
+
+        new WebDriverWait(driver, Duration.ofSeconds(5))
+                .until(ExpectedConditions.visibilityOf(optionPage.usernameTextInfo));
+
+//        System.out.println("player logged in");
+
     }
 
 
     @Given("The user is on the User Edit Page")
     public void the_user_is_on_the_user_edit_page() {
-        // Write code here that turns the phrase above into concrete actions
-        optionPage.editUserProfileButton.click();
+
+//        System.out.println("user on edit page function");
+
+        new WebDriverWait(driver, Duration.ofSeconds(5))
+                .until(ExpectedConditions.visibilityOf(optionPage.usernameTextInfo));
+
+        new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions
+                .elementToBeClickable(optionPage.editUserProfileButton)).click();
+
+        new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions
+                .elementToBeClickable(editUserProfilePage.submitButton));
     }
 
     @When("the user clicks on the Display Biometrics checkbox")
@@ -82,8 +100,10 @@ public class BiometricDisplayOptionStepImpl {
     @Then("an alert message box appears that says update was successful")
     public void an_alert_message_box_appears_that_says_update_was_successful() {
         // Write code here that turns the phrase above into concrete actions
+        new WebDriverWait(driver, Duration.ofSeconds(5))
+                .until(ExpectedConditions.alertIsPresent());
         String alertMessage = driver.switchTo().alert().getText();
-        assertEquals("", alertMessage);
+        assertEquals("Update successful!", alertMessage);
     }
 
     @Then("click OK")
@@ -91,7 +111,6 @@ public class BiometricDisplayOptionStepImpl {
         // Write code here that turns the phrase above into concrete actions
         driver.switchTo().alert().accept();
     }
-
 
 
 }

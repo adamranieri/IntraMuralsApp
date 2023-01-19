@@ -162,6 +162,7 @@
                     </dependency>
                 </dependencies>
             </plugin>
+
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
@@ -170,6 +171,7 @@
                     <mainClass>com.uni.app.App</mainClass>
                 </configuration>
             </plugin>
+
         </plugins>
     </build>
 

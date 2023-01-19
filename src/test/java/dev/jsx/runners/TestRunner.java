@@ -11,10 +11,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features="src/test/java/dev/jsx/features",
+        features="src/test/java/dev/jsx/features/CreateOrManageAccount",
         glue="dev.jsx.steps"
 )
+
+
 public class TestRunner {
+
     public static WebDriver driver;
 
     @BeforeClass

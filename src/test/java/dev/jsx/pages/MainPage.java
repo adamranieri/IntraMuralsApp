@@ -18,6 +18,7 @@ public class MainPage {
     public WebElement registerLink;
 
     @FindBy(linkText="Login")
+
     public WebElement loginLink;
 
 

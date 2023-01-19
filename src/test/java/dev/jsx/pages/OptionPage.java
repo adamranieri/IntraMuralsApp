@@ -31,6 +31,7 @@ public class OptionPage {
     @FindBy(linkText="Edit User Profile")
     public WebElement editUserProfileButton;
 
+
     @FindBy(linkText="Games")
     public WebElement gamesLink;
 
@@ -67,9 +68,11 @@ public class OptionPage {
 
 
 
+
     // Non navigational web elements
     @FindBy(xpath ="/html/body/h1")
     public WebElement roleTextInfo;
+
 
     @FindBy(xpath ="/html/body/h2")
     public WebElement captainTextInfo;

@@ -83,6 +83,7 @@ public class NegativeUpdateHeightWeightStepImpl {
         // Write code here that turns the phrase above into concrete actions
         editUserProfilePage.weightInput.clear();
         editUserProfilePage.weightInput.sendKeys("10");
+//
     }
 
     @When("the user types a new weight of zero pounds in the weight input")

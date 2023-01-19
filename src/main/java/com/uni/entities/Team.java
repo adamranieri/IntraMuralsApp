@@ -1,5 +1,7 @@
 package com.uni.entities;
 
+import java.util.Objects;
+
 public class Team {
 
     private String name;
@@ -47,5 +49,27 @@ public class Team {
 
     public void setTeamStatus(String teamStatus) {
         this.teamStatus = teamStatus;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Team team = (Team) o;
+
+        if (captain != team.captain) return false;
+        if (!Objects.equals(name, team.name)) return false;
+        if (!Objects.equals(sport, team.sport)) return false;
+        return Objects.equals(teamStatus, team.teamStatus);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name != null ? name.hashCode() : 0;
+        result = 31 * result + captain;
+        result = 31 * result + (sport != null ? sport.hashCode() : 0);
+        result = 31 * result + (teamStatus != null ? teamStatus.hashCode() : 0);
+        return result;
     }
 }

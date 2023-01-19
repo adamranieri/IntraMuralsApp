@@ -27,7 +27,7 @@ public class SeasonPage {
     @FindBy(id="seasonTableBody")
     public WebElement seasonTableBody;
 
-    @FindBy(xpath="*[@id='seasonTableBody']/tr[1]")
+    @FindBy(xpath="//*[@id='seasonTableBody']/tr[1]")
     public WebElement firstRow;
 
     @FindBy(linkText="Back")

@@ -118,6 +118,14 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.mockito/mockito-junit-jupiter -->
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-junit-jupiter</artifactId>
+            <version>5.0.0</version>
+            <scope>test</scope>
+        </dependency>
+
 
     </dependencies>
 
@@ -158,19 +166,11 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
-                <version>1.6.0</version> <configuration>
+                <version>3.1.0</version>
+                <configuration>
                     <mainClass>com.uni.app.App</mainClass>
                 </configuration>
             </plugin>
-
-<!--            <plugin>-->
-<!--                <groupId>org.codehaus.mojo</groupId>-->
-<!--                <artifactId>exec-maven-plugin</artifactId>-->
-<!--                <version>1.6.0</version>-->
-<!--                <configuration>-->
-<!--                    <mainClass>com.journaldev.maven.utils.BuildInfo</mainClass>-->
-<!--                </configuration>-->
-<!--            </plugin>-->
 
         </plugins>
     </build>
